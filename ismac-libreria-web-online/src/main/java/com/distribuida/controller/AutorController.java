@@ -17,7 +17,7 @@ import com.distribuida.entities.Autor;
 
 
 @Controller
-@RequestMapping("/Autors") //Path principal
+@RequestMapping("/Autor") //Path principal
 public class AutorController {
 
 	@Autowired
@@ -26,15 +26,15 @@ public class AutorController {
 	@GetMapping("/findAll")
 	public String findAll(Model model) {
 		/*try {
-			List<Autor> Autors=AutorDAO.findALL();
-			model.addAttribute ("Autors", Autors);
-			return "listar-Autors";
+			List<Autor> Autor=AutorDAO.findALL();
+			model.addAttribute ("Autor", Autor);
+			return "listar-Autor";
 		}catch(Exception e){
 			e.printStackTrace();
 		}*/
-		List<Autor> Autors=AutorDAO.findALL();
-		model.addAttribute ("Autors", Autors);
-		return "listar-Autors";
+		List<Autor> Autor=AutorDAO.findALL();
+		model.addAttribute ("Autor", Autor);
+		return "listar-Autor";
 	}
 	
 	@GetMapping("/findOne")
@@ -47,8 +47,8 @@ public class AutorController {
 				Autor Autor = AutorDAO.findOne(idAutor);
 				model.addAttribute("Autor", Autor);
 			}
-			if(opcion == 1) return "add-Autors";
-			else return "del-Autors";
+			if(opcion == 1) return "add-Autor";
+			else return "del-Autor";
 		} catch (Exception e) {
 			// TODO: handle exception
 		}*/
@@ -56,8 +56,8 @@ public class AutorController {
 			Autor Autor = AutorDAO.findOne(idAutor);
 			model.addAttribute("Autor", Autor);
 		}
-		if(opcion == 1) return "add-Autors";
-		else return "del-Autors";
+		if(opcion == 1) return "add-Autor";
+		else return "del-Autor";
 	}
 	
 	@PostMapping("/add")
@@ -79,7 +79,7 @@ public class AutorController {
 				AutorDAO.up(Autor2);
 			}
 				
-			return "redirect:/Autors/findAll";
+			return "redirect:/Autor/findAll";
 		} catch (Exception e) {
 			// TODO: handle exception
 		}*/
@@ -91,19 +91,19 @@ public class AutorController {
 			AutorDAO.up(Autor2);
 		}
 			
-		return "redirect:/Autors/findAll";
+		return "redirect:/Autor/findAll";
 	}
 	
 	@GetMapping("/dell")
 	public String dell(@RequestParam ("idAutor") @Nullable Integer idAutor) {
 		/*try {
 			AutorDAO.dell(idAutor);
-			return "redirect:/Autors/findAll";
+			return "redirect:/Autor/findAll";
 		} catch (Exception e) {
 			// TODO: handle exception
 		}*/
 		AutorDAO.dell(idAutor);
-		return "redirect:/Autors/findAll";
+		return "redirect:/Autor/findAll";
 	}
 	
 }

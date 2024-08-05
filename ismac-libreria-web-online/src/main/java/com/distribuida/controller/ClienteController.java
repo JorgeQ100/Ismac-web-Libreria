@@ -84,10 +84,10 @@ public class ClienteController {
 			// TODO: handle exception
 		}*/
 		if(idCliente == null) {
-			Cliente cliente = new Cliente(0, cedula, nombre, apellido, telefono, correo);
+			Cliente cliente = new Cliente(0, cedula, nombre, apellido, direccion, telefono, correo);
 			clienteDAO.add(cliente);
 		}else {
-			Cliente cliente2 = new Cliente(idCliente, cedula, nombre, apellido, telefono, correo);
+			Cliente cliente2 = new Cliente(idCliente, cedula, nombre, apellido, direccion,telefono, correo);
 			clienteDAO.up(cliente2);
 		}
 			

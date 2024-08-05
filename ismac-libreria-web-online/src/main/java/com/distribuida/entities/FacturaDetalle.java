@@ -14,13 +14,13 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-@Table(name = "detalle_factura")
+@Table(name = "factura_detalle")
 public class FacturaDetalle {
 	//id_detalle_factura, cantidad, subtotal, id_factura, id_libro
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_detalle_factura")
+	@Column(name = "id_factura_detalle")
 	private int idFacturaDetalle;
 	@Column(name = "cantidad")
 	private int cantidad;
