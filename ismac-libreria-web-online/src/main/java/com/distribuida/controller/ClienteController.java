@@ -32,9 +32,9 @@ public class ClienteController {
 		}catch(Exception e){
 			e.printStackTrace();
 		}*/
-		List<Cliente> clientes=clienteDAO.findALL();
+		List<Cliente> clientes = clienteDAO.findALL();
 		model.addAttribute ("clientes", clientes);
-		return "listar-clientes";
+		return "clientes-listar";
 	}
 	
 	@GetMapping("/findOne")

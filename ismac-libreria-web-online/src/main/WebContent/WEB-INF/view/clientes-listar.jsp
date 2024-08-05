@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <body>
@@ -24,8 +24,6 @@
 
 		<tbody>
 			<c:forEach var="item" items="${clientes}">
-
-			</c:forEach>
 			<tr>
 				<td>${item.idCliente}</td>
 				<td>${item.cedula}</td>
@@ -35,6 +33,7 @@
 				<td>${item.telefono}</td>
 				<td>${item.correo}</td>
 			</tr>
+			</c:forEach>
 		</tbody>
 
 	</table>
