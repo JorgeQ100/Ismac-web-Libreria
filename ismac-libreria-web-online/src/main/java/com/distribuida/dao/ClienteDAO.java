@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface ClienteDAO {
 
-public List<Cliente> findALL();
+	public List<Cliente> findALL();
 	
 	public Cliente findOne(int id);
 	
