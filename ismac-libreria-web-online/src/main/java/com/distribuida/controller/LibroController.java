@@ -94,7 +94,7 @@ public class LibroController {
 	@GetMapping("/del")
 	public String dell(@RequestParam("idLibro") @Nullable Integer idLibro) {
 		libroDAO.dell(idLibro);
-		return "redirect:/libros/listar-libros";
+		return "redirect:/libros/libros-listar";
 	}
 	
 }

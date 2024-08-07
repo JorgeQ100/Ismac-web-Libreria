@@ -17,7 +17,7 @@ public class CategoriaDAOimpl implements CategoriaDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	@Override
+	
 	@Transactional
 	public List<Categoria> findALL() {
 		// TODO Auto-generated method stub
@@ -26,7 +26,7 @@ public class CategoriaDAOimpl implements CategoriaDAO {
 		return session.createQuery("from Categoria", Categoria.class).getResultList();
 	}
 
-	@Override
+	
 	@Transactional
 	public Categoria findOne(int id) {
 		// TODO Auto-generated method stub
@@ -34,7 +34,7 @@ public class CategoriaDAOimpl implements CategoriaDAO {
 		return session.get(Categoria.class,id);
 	}
 
-	@Override
+	
 	@Transactional
 	public void add(Categoria categoria) {
 		// TODO Auto-generated method stub
@@ -42,7 +42,7 @@ public class CategoriaDAOimpl implements CategoriaDAO {
 		session.saveOrUpdate(categoria);
 	}
 
-	@Override
+	
 	@Transactional
 	public void up(Categoria categoria) {
 		// TODO Auto-generated method stub
@@ -51,7 +51,7 @@ public class CategoriaDAOimpl implements CategoriaDAO {
 		
 	}
 
-	@Override
+	
 	@Transactional
 	public void dell(int id) {
 		// TODO Auto-generated method stub

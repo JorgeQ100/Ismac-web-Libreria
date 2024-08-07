@@ -17,7 +17,7 @@ public class ClienteDAOimpl implements ClienteDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	@Override
+	
 	@Transactional
 	public List<Cliente> findALL() {
 		// TODO Auto-generated method stub
@@ -26,7 +26,7 @@ public class ClienteDAOimpl implements ClienteDAO {
 		return session.createQuery("from Cliente", Cliente.class).getResultList();
 	}
 
-	@Override
+	
 	@Transactional
 	public Cliente findOne(int id) {
 		// TODO Auto-generated method stub
@@ -34,7 +34,7 @@ public class ClienteDAOimpl implements ClienteDAO {
 		return session.get(Cliente.class,id);
 	}
 
-	@Override
+	
 	@Transactional
 	public void add(Cliente cliente) {
 		// TODO Auto-generated method stub
@@ -42,7 +42,7 @@ public class ClienteDAOimpl implements ClienteDAO {
 		session.saveOrUpdate(cliente);
 	}
 
-	@Override
+	
 	@Transactional
 	public void up(Cliente cliente) {
 		// TODO Auto-generated method stub
@@ -51,7 +51,7 @@ public class ClienteDAOimpl implements ClienteDAO {
 		
 	}
 
-	@Override
+	
 	@Transactional
 	public void dell(int id) {
 		// TODO Auto-generated method stub

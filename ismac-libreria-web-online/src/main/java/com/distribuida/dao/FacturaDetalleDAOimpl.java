@@ -17,7 +17,7 @@ public class FacturaDetalleDAOimpl implements FacturaDetalleDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	@Override
+	
 	@Transactional
 	public List<FacturaDetalle> findALL() {
 		// TODO Auto-generated method stub
@@ -26,7 +26,7 @@ public class FacturaDetalleDAOimpl implements FacturaDetalleDAO {
 		return session.createQuery("from FacturaDetalle", FacturaDetalle.class).getResultList();
 	}
 
-	@Override
+	
 	@Transactional
 	public FacturaDetalle findOne(int id) {
 		// TODO Auto-generated method stub
@@ -34,7 +34,7 @@ public class FacturaDetalleDAOimpl implements FacturaDetalleDAO {
 		return session.get(FacturaDetalle.class,id);
 	}
 
-	@Override
+	
 	@Transactional
 	public void add(FacturaDetalle facturaDetalle) {
 		// TODO Auto-generated method stub
@@ -42,7 +42,7 @@ public class FacturaDetalleDAOimpl implements FacturaDetalleDAO {
 		session.saveOrUpdate(facturaDetalle);
 	}
 
-	@Override
+	
 	@Transactional
 	public void up(FacturaDetalle facturaDetalle) {
 		// TODO Auto-generated method stub
@@ -51,7 +51,7 @@ public class FacturaDetalleDAOimpl implements FacturaDetalleDAO {
 		
 	}
 
-	@Override
+	
 	@Transactional
 	public void dell(int id) {
 		// TODO Auto-generated method stub

@@ -18,7 +18,6 @@ public class AutorDAOimpl implements AutorDAO{
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	@Override
 	@Transactional
 	public List<Autor> findALL() {
 		// TODO Auto-generated method stub
@@ -27,7 +26,6 @@ public class AutorDAOimpl implements AutorDAO{
 		return session.createQuery("SELECT au FROM Autor au", Autor.class).getResultList();
 	}
 
-	@Override
 	@Transactional
 	public Autor findOne(int id) {
 		// TODO Auto-generated method stub
@@ -40,7 +38,6 @@ public class AutorDAOimpl implements AutorDAO{
 		return (Autor) query.getSingleResult();
 	}
 
-	@Override
 	@Transactional
 	public void add(Autor autor) {
 		// TODO Auto-generated method stub
@@ -50,7 +47,6 @@ public class AutorDAOimpl implements AutorDAO{
 
 	}
 
-	@Override
 	@Transactional
 	public void up(Autor autor) {
 		// TODO Auto-generated method stub
@@ -74,7 +70,6 @@ public class AutorDAOimpl implements AutorDAO{
 		query.executeUpdate();
 	}
 
-	@Override
 	@Transactional
 	public void dell(int id) {
 		// TODO Auto-generated method stub

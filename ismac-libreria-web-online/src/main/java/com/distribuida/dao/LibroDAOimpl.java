@@ -17,7 +17,7 @@ public class LibroDAOimpl implements LibroDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	@Override
+	
 	@Transactional
 	public List<Libro> findALL() {
 		// TODO Auto-generated method stub
@@ -26,7 +26,7 @@ public class LibroDAOimpl implements LibroDAO {
 		return session.createQuery("from libro", Libro.class).getResultList();
 	}
 
-	@Override
+	
 	@Transactional
 	public Libro findOne(int id) {
 		// TODO Auto-generated method stub
@@ -34,7 +34,7 @@ public class LibroDAOimpl implements LibroDAO {
 		return session.get(Libro.class,id);
 	}
 
-	@Override
+	
 	@Transactional
 	public void add(Libro libro) {
 		// TODO Auto-generated method stub
@@ -42,7 +42,7 @@ public class LibroDAOimpl implements LibroDAO {
 		session.saveOrUpdate(libro);
 	}
 
-	@Override
+	
 	@Transactional
 	public void up(Libro libro) {
 		// TODO Auto-generated method stub
@@ -51,7 +51,7 @@ public class LibroDAOimpl implements LibroDAO {
 		
 	}
 
-	@Override
+	
 	@Transactional
 	public void dell(int id) {
 		// TODO Auto-generated method stub

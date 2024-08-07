@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,10 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	<h1>Clientes</h1>
+<h1>Clientes</h1>
 	
-	<button onclick="windown.loction.href='/ismac-libreria-web/clientes/findOne?opcion=1'; return false">
+	<button onclick="windown.loction.href='/ismac-libreria-web-online/clientes/findOne?opcion=1'; return false">
 	Agregar
     </button>
 	
@@ -40,10 +38,10 @@
 					<td>${item.telefono}</td>
 					<td>${item.correo}</td>
 					<td>
-					 	<button onclick="windown.loction.href='/ismac-libreria-web/clientes/findOne?idCliente=${item.idCliente}&opcion=1'; return false">
+					 	<button onclick="windown.loction.href='/ismac-libreria-web-online/clientes/findOne?idCliente=${item.idCliente}&opcion=1'; return false">
 					 		Actualizar
 					 	</button>
-					 	<button onclick="windown.loction.href='/ismac-libreria-web/clientes/findOne?idCliente=${item.idCliente}&opcion=2'; return false">
+					 	<button onclick="windown.loction.href='/ismac-libreria-web-online/clientes/findOne?idCliente=${item.idCliente}&opcion=2'; return false">
 					 		Eliminar
 					 	</button>
 					</td>
@@ -51,6 +49,5 @@
 			</c:forEach>
 		</tbody>
 	</table>
-	
 </body>
 </html>
