@@ -23,7 +23,7 @@ public class LibroDAOimpl implements LibroDAO {
 		// TODO Auto-generated method stub
 		
 		Session session = sessionFactory.getCurrentSession();
-		return session.createQuery("from libro", Libro.class).getResultList();
+		return session.createQuery("from Libro", Libro.class).getResultList();
 	}
 
 	

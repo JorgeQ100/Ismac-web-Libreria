@@ -34,7 +34,7 @@ public class LibroController {
 	private String findAll(ModelMap modelMap) {
 		List<Libro> libros = libroDAO.findALL();
 		modelMap.addAttribute("libros", libros);
-		return "listar-libros";
+		return "libros-listar";
 	}
 	
 	@GetMapping("/findOne") //Actualizar o eliminar

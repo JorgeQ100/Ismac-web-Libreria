@@ -19,6 +19,7 @@ import org.springframework.stereotype.Component;
 @Table(name = "libro")
 public class Libro {
 	
+	//# id_libro, titulo, editorial, num_paginas, edicion, idioma, fecha_publicacion, descripcion, tipo_pasta, ISBN, num_ejemplares, portada, presentacion, precio, id_categoria, id_autor
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

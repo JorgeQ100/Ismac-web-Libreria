@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,22 +37,22 @@
 		<tbody>
 			<c:forEach var="item" items="${libros}">
 				<tr>
-					<td>${item.idLibros}</td>
+					<td>${item.idLibro}</td>
 					<td>${item.titulo}</td>
 					<td>${item.editorial}</td>
 					<td>${item.numPaginas}</td>
 					<td>${item.edicion}</td>
 					<td>${item.idioma}</td>
-					<td>${item.fechaPublicacion}</td>
+					<td>${fn:substring(item.fechaPublicacion,0,10)}</td>
 					<td>${item.descripcion}</td>
 					<td>${item.tipoPasta}</td>
 					<td>${item.ISBN}</td>
 					<td>${item.numEjemplares}</td>
 					<td>${item.portada}</td>
-					<td>${item.presebtacuib}</td>
+					<td>${item.presentacion}</td>
 					<td>${item.precio}</td>
-					<td>${item.categoria}</td>
-					<td>${item.autor}</td>
+					<td>${item.categoria.categoria}</td>
+					<td>${item.autor.nombre}${item.autor.apellido}</td>
 		
 					<td>
 					 	<button >
