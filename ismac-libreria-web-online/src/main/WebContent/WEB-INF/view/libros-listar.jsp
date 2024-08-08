@@ -48,7 +48,9 @@
 					<td>${item.tipoPasta}</td>
 					<td>${item.ISBN}</td>
 					<td>${item.numEjemplares}</td>
-					<td>${item.portada}</td>
+					<td>
+						<img alt="Portada de libro" width="100" height="100" src="${pagecontext.request.contextPath}/resources/img/${item.portada}"/>
+					</td>
 					<td>${item.presentacion}</td>
 					<td>${item.precio}</td>
 					<td>${item.categoria.categoria}</td>
