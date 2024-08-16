@@ -65,6 +65,7 @@
 	<input type="number" id="precio" name="precio" value="${libro.precio}">
 	</br>
 	</br>
+	
 	Categoria
 	<select id="idCategoria" name="idCategoria">
 	
@@ -75,6 +76,7 @@
 	</select>
 	</br>
 	</br>
+	
 	Autor
 	<select id="idAutor" name="idAutor">
 	<c:forEach var="item" items="${autores}">

@@ -59,10 +59,10 @@
 					<td>${item.autor.nombre}${item.autor.apellido}</td>
 		
 					<td>
-					 		<button onclick="window.location.href='/ismac-libreria-web-online/libros/findOne?idlibro=${item.idLibro}&opcion=1'; return false;">
+					 		<button onclick="window.location.href='/ismac-libreria-web-online/libros/findOne?idLibro=${item.idLibro}&opcion=1'; return false;">
 					 		Actualizar
 					 	</button>
-					 	<button onclick="window.location.href='/ismac-libreria-web-online/libros/findOne?idlibro=${item.idLibro}&opcion=2'; return false;">
+					 	<button onclick="window.location.href='/ismac-libreria-web-online/libros/findOne?idLibro=${item.idLibro}&opcion=2'; return false;">
 					 		Eliminar
 					 	</button>
 					</td>
