@@ -34,7 +34,7 @@
 				</div>
 				<div class="from-group">
 					<label for="numPaginas" class="form-label">Numero de Paginas</label>
-					<input class="form-control" type="number" id="numPaginas" name="numPaginas" value="${libro.numPaginas}">
+					<input class="form-control" type="number" id="numPaginas" name="numPaginas" value="${libro.numPaginas}" required="required">
 				</div>
 				<div class="from-group">
 					<label for="edicion" class="form-label">Edición</label>
@@ -42,43 +42,43 @@
 				</div>
 				<div class="from-group">
 					<label for="idioma" class="form-label">Idioma</label>
-					<input class="form-control" type="text" id="idioma" name="idioma" value="${libro.idioma}">
+					<input class="form-control" type="text" id="idioma" name="idioma" value="${libro.idioma}" required="required">
 				</div>
 				<div class="from-group">
 					<label for="fechaPublicacion" class="form-label">Fecha de Publicación</label>
-					<input class="form-control" type="date" id="fechaPublicacion" name="fechaPublicacion" value="${fn:substring(libro.fechaPublicacion,0,10)}">
+					<input class="form-control" type="date" id="fechaPublicacion" name="fechaPublicacion" value="${fn:substring(libro.fechaPublicacion,0,10)}" >
 				</div>
 				<div class="from-group">
 					<label for="descripcion" class="form-label">Descripción</label>
-					<input class="form-control" type="text" id="descripcion" name="descripcion" value="${libro.descripcion}">
+					<input class="form-control" type="text" id="descripcion" name="descripcion" value="${libro.descripcion}" >
 				</div>
 				<div class="from-group">
 					<label for="tipoPasta" class="form-label">Tipo de Pasta</label>
-					<input class="form-control"  type="text" id="tipoPasta" name="tipoPasta" value="${libro.tipoPasta}">
+					<input class="form-control"  type="text" id="tipoPasta" name="tipoPasta" value="${libro.tipoPasta}" required="required">
 				</div>
 				<div class="from-group">
 					<label for="ISBN" class="form-label">ISBN</label>
-					<input class="form-control" type="text" id="ISBN" name="ISBN" value="${libro.ISBN}">
+					<input class="form-control" type="text" id="ISBN" name="ISBN" value="${libro.ISBN}" >
 				</div>
 				<div class="from-group">
 					<label for="numEjemplares" class="form-label">Numero de Ejemplares</label>
-					<input class="form-control" type="number" id="numEjemplares" name="numEjemplares" value="${libro.numEjemplares}">
+					<input class="form-control" type="number" id="numEjemplares" name="numEjemplares" value="${libro.numEjemplares}" required="required">
 				</div>
 				<div class="from-group">
 					<label for="Portada" class="form-label">Portada</label>
-					<input class="form-control" type="text" id="portada" name="portada" value="${libro.portada}">
+					<input class="form-control" type="text" id="portada" name="portada" value="${libro.portada}" required="required">
 				</div>		
 				<div class="from-group">
 					<label for="Presentación" class="form-label">Presentación</label>
-					<input class="form-control" type="text" id="presentacion" name="presentacion" value="${libro.presentacion}">
+					<input class="form-control" type="text" id="presentacion" name="presentacion" value="${libro.presentacion}" required="required">
 				</div>			
 				<div class="from-group">
 					<label for="Precio" class="form-label">Precio</label>
-					<input class="form-control" type="number" id="precio" name="precio" value="${libro.precio}" required="required">
+					<input class="form-control" type="number" id="precio" name="precio" value="${libro.precio}" required="required" required="required">
 				</div>
 				<div class="from-group">
 					<label for="idCategoria" class="form-label">Categoria</label>
-					<select class="form-control"  id="idCategoria" name="idCategoria">
+					<select class="form-control"  id="idCategoria" name="idCategoria"  required="required">
 					<c:forEach var="item" items="${categorias}">
 						<option value="${item.idCategoria}" ${item.idCategoria == libro.categoria.idCategoria ? 'selected' : '' } >${item.categoria}</option>
 					</c:forEach>	
@@ -86,7 +86,7 @@
 				</div>
 				<div class="from-group">
 					<label for="idAutor" class="form-label">Autor</label>
-					<select class="form-control" id="idAutor" name="idAutor">
+					<select class="form-control" id="idAutor" name="idAutor"  required="required">
 						<c:forEach var="item" items="${autores}">
 							<option value="${item.idAutor}" ${item.idAutor == libro.autor.idAutor ? 'selected' : '' } > ${item.nombre} ${item.apellido} </option>
 						</c:forEach>
@@ -115,16 +115,31 @@
 		src="${pageContext.request.contextPath}/resources/js/bootstrap-table.min.js"></script>
 	<script type="text/javascript"
 		src="${pageContext.request.contextPath}/resources/js/bootstrap-table-es-MX.min.js"></script>
-	<script type="text/javascript">
-		var $tabla1 = $('#tabla1')
- 
-		$(function() {
- 
-			$tabla1.bootstrapTable({
-				sortReset : true
-			})
-		})
-	</script>
+	
+	
+
+
+
+
+<script>
+	(() => {
+		'use strict';
+		
+		const forms = document.querySelectorAll('.needs-validation');
+		
+		Array.from(forms).forEach(form => {
+			form.addEventListener('submit', event => {
+				if (!form.checkValidity()) {
+					event.preventDefault();
+					event.stopPropagation();
+				}
+				form.classList.add('was-validated');
+			}, false);
+		});
+	})();
+</script>
+
+
 	
 </body>
 </html>
